@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eco-Punto Verde | Puente Río Chanchas - Huancán</title>
+  <style>
+    :root {
+      --verde-oscuro: #14532d;
+      --verde-medio: #16a34a;
+      --verde-claro: #dcfce7;
+      --crema: #f8fafc;
+      --texto: #1e293b;
+      --blanco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--crema);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    /* Encabezado Hero */
+    header {
+      background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
+      color: var(--blanco);
+      text-align: center;
+      padding: 2.2rem 1.2rem;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    header .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.5px;
+    }
+
+    header h1 {
+      font-size: 1.7rem;
+      margin-bottom: 0.4rem;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      opacity: 0.95;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* Contenedor Principal */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 1.4rem 1rem 3rem;
+    }
+
+    .card {
+      background: var(--blanco);
+      border-radius: 16px;
+      padding: 1.3rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e2e8f0;
+    }
+
+    .card h2 {
+      color: var(--verde-oscuro);
+      font-size: 1.2rem;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Guía de Tachos Segregadores */
+    .tachos-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    @media (min-width: 540px) {
+      .tachos-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .tacho {
+      border-radius: 12px;
+      padding: 1rem;
+      color: var(--blanco);
+      text-align: center;
+    }
+
+    .tacho h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+
+    .tacho p {
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    .tacho-azul { background-color: #2563eb; }
+    .tacho-amarillo { background-color: #ca8a04; }
+    .tacho-verde { background-color: #16a34a; }
+
+    /* Flora Nativa */
+    .flora-list {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .flora-list li {
+      background: var(--verde-claro);
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      margin-bottom: 0.6rem;
+      font-size: 0.92rem;
+      border-left: 4px solid var(--verde-medio);
+    }
+
+    /* ODS */
+    .ods-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.6rem;
+    }
+
+    .ods-tag {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--verde-oscuro);
+    }
+
+    /* Formulario de Compromiso Ciudadano */
+    .form-group {
+      margin-bottom: 0.8rem;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 0.95rem;
+    }
+
+    button {
+      width: 100%;
+      background-color: var(--verde-medio);
+      color: var(--blanco);
+      border: none;
+      padding: 0.85rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background-color: var(--verde-oscuro);
+    }
+
+    .confirmacion {
+      display: none;
+      margin-top: 0.8rem;
+      background: var(--verde-claro);
+      color: var(--verde-oscuro);
+      padding: 0.8rem;
+      border-radius: 10px;
+      font-weight: 600;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="badge">HUANCÁN • RÍO CHANCHAS</span>
+    <h1>Eco-Punto Verde</h1>
+    <p>¡Cuidemos nuestro río! Recicla hoy y conserva nuestro mañana.</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Sección 1: ¿Qué es? -->
+    <div class="card">
+      <h2>🌱 ¿Qué es este espacio?</h2>
+      <p>
+        Es un módulo ecológico de descanso y educación ambiental creado por estudiantes de la <strong>Universidad Continental (Equipo Raíces Regenerativas)</strong> para recuperar la ribera del puente del río Chanchas mediante mobiliario de madera reutilizada y segregación de residuos.
+      </p>
+      <div class="ods-box">
+        <span class="ods-tag">ODS 11.7: Espacios públicos verdes</span>
+        <span class="ods-tag">ODS 15.1: Restauración ribereña</span>
+      </div>
+    </div>
+
+    <!-- Sección 2: Cómo segregar -->
+    <div class="card">
+      <h2>♻️ ¿Cómo reciclar correctamente aquí?</h2>
+      <p>Antes de retirarte del puente, deposita tus residuos en el tacho correspondiente:</p>
+      <div class="tachos-grid">
+        <div class="tacho tacho-azul">
+          <h3>Plástico</h3>
+          <p>Botellas de agua, gaseosas, bolsas limpias y envases plásticos.</p>
+        </div>
+        <div class="tacho tacho-amarillo">
+          <h3>Papel y Cartón</h3>
+          <p>Envolturas de cartón limpio, folletos, boletas y papel seco.</p>
+        </div>
+        <div class="tacho tacho-verde">
+          <h3>Vidrio / Orgánicos</h3>
+          <p>Botellas de vidrio y cáscaras de fruta (sin mezclar con plásticos).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 3: Flora Nativa -->
+    <div class="card">
+      <h2>🌳 Nuestra Flora Nativa Regenerativa</h2>
+      <p>Los maceteros elaborados con llantas reutilizadas protegen especies propias del valle:</p>
+      <ul class="flora-list">
+        <li><strong>Aliso (Alnus acuminata):</strong> Árbol ribereño que fija nitrógeno en el suelo y protege las orillas contra la erosión.</li>
+        <li><strong>Quinual (Polylepis):</strong> Especie altoandina clave para la captura de humedad y conservación de la biodiversidad local.</li>
+      </ul>
+    </div>
+
+    <!-- Sección 4: Registro de Visitantes (Métrica para el equipo) -->
+    <div class="card">
+      <h2>🤝 Súmate como Guardián del Río</h2>
+      <p style="margin-bottom: 0.8rem; font-size: 0.92rem;">
+        Registra tu visita para ayudarnos a medir el impacto de este Eco-Punto en Huancán:
+      </p>
+      <div class="form-group">
+        <input type="text" id="nombre" placeholder="Tu nombre o apodo" />
+      </div>
+      <div class="form-group">
+        <select id="perfil">
+          <option value="Visitante / Turista">Soy visitante / turista</option>
+          <option value="Vecino de Huancán">Soy vecino(a) de Huancán</option>
+          <option value="Comerciante / Fotógrafo">Soy comerciante o fotógrafo local</option>
+          <option value="Estudiante">Soy estudiante</option>
+        </select>
+      </div>
+      <button onclick="registrarCompromiso()">Confirmar mi compromiso verde</button>
+      <div id="mensaje-ok" class="confirmacion"></div>
+    </div>
+
+    <footer>
+      <p>Proyecto: Raíces Regenerativas • Laboratorio de Liderazgo e Innovación Intermedio (NRC 49163) • Universidad Continental</p>
+    </footer>
+
+  </div>
+
+  <script>
+    let contador = 24; // Base inicial de validación en campo
+    function registrarCompromiso() {
+      const nombreInput = document.getElementById('nombre').value.trim();
+      const perfilInput = document.getElementById('perfil').value;
+      const msg = document.getElementById('mensaje-ok');
+      const nombre = nombreInput !== "" ? nombreInput : "Visitante";
+
+      contador++;
+      msg.style.display = "block";
+      msg.innerHTML = `✅ ¡Gracias, ${nombre} (${perfilInput})! Eres el visitante #${contador} comprometido con mantener limpio el río Chanchas.`;
+      document.getElementById('nombre').value = "";
+    }
+  </script>
+
+</body>
+</html>
